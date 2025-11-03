@@ -1,0 +1,43 @@
+---
+import '../styles/variables.css'
+---
+
+<article id='event-details' class='p-8 gap-8 relative flex justify-center z-0'>
+  <section class='p-8 rounded-sm shadow-xl flex flex-col gap-4'>
+    <h3>Ceremony</h3>
+    <p>
+      Date: June 15, 2024<br />
+      Time: 4:00 PM<br />
+      Location: Sunset Beach Resort, 123 Ocean Drive, Miami, FL
+    </p>
+  </section>
+  <section class='rounded-sm shadow-xl'>
+    <iframe
+      class='rounded-sm shadow-xl'
+      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3635252358436!2d-75.5525986!3d6.2156975999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442822e989b55d%3A0x10cb33ea47f85409!2sChuscalito%20Sabores%20y%20Celebraci%C3%B3n!5e0!3m2!1ses!2sco!4v1762195634865!5m2!1ses!2sco'
+      width='600'
+      height='450'
+      style='border:0;'
+      allowfullscreen=''
+      loading='lazy'
+      referrerpolicy='no-referrer-when-downgrade'></iframe>
+  </section>
+</article>
+
+<style>
+  #event-details::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+    background-image: url('../assets/event-details-bg.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8);
+    z-index: 0;
+  }
+
+  #event-details section {
+    z-index: 1;
+    background-color: var(--color-accent);
+  }
+</style>
