@@ -1,0 +1,14 @@
+---
+import Logo from "../assets/logo.astro";
+
+console.log("Header component loaded");
+---
+
+<header class="flex items-center justify-between py-4 px-8 absolute top-0 left-0 w-full z-10">
+    <Logo color="white" />
+    <nav class="flex flex-row items-center justify-between gap-4 text-white">
+        <a href="#our-story">Nuestra Historia</a>
+        <a href="#event-details">Detalles del evento</a>
+        <a href="#rsvp">Contáctanos</a>
+    </nav>
+</header>
