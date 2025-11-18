@@ -1,0 +1,17 @@
+# robots.txt para Andrés & Valentina Wedding
+User-agent: *
+Allow: /
+Disallow: /DressCode/
+
+# Sitemap
+Sitemap: https://avwedding-three.vercel.app/sitemap-index.xml
+
+# Crawl-delay para evitar sobrecarga del servidor
+Crawl-delay: 1
+
+# Bots específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

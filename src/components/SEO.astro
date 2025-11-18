@@ -1,0 +1,84 @@
+---
+export interface Props {
+  title?: string
+  description?: string
+  image?: string
+  noindex?: boolean
+  canonical?: string
+  type?: 'website' | 'article'
+  schemaType?: 'Event' | 'WebPage' | 'Article'
+}
+
+const {
+  title = 'Andrés & Valentina - Nuestra Boda',
+  description = 'Te invitamos a celebrar nuestro matrimonio. Conoce nuestra historia, detalles del evento y confirma tu asistencia.',
+  image = '/assets/og-image.jpg',
+  noindex = false,
+  canonical,
+  type = 'website',
+  schemaType = 'Event'
+} = Astro.props
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href
+const imageURL = new URL(image, Astro.site).href
+
+// Schema.org para evento de boda
+const eventSchema = schemaType === 'Event' ? {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  'name': 'Boda de Andrés & Valentina',
+  'description': description,
+  'startDate': '2026-06-27T17:00:00-05:00', 
+  'endDate': '2026-06-27T23:00:00-05:00', 
+  'eventStatus': 'https://schema.org/EventScheduled',
+  'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
+  'location': {
+    '@type': 'Place',
+    'name': 'Chucalito Sabores y celebraciones', 
+    'address': {
+      '@type': 'PostalAddress',
+      'addressLocality': 'Medellín',
+      'addressCountry': 'Colombia'
+    }
+  },
+  'image': imageURL,
+  'organizer': {
+    '@type': 'Person',
+    'name': 'Andrés & Valentina'
+  }
+} : {
+  '@context': 'https://schema.org',
+  '@type': schemaType,
+  'name': title,
+  'description': description,
+  'image': imageURL
+}
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Robots -->
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+{!noindex && <meta name="robots" content="index, follow" />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:locale" content="es_ES" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={imageURL} />
+
+<!-- Schema.org -->
+<script type="application/ld+json" set:html={JSON.stringify(eventSchema)} />

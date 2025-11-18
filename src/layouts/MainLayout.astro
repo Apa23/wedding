@@ -3,10 +3,11 @@ import '../styles/global.css'
 import '../styles/variables.css'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import SEO from '../components/SEO.astro'
 ---
 
 <!doctype html>
-<html lang='en' class="scroll-smooth">
+<html lang='es' class="scroll-smooth">
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -18,7 +19,11 @@ import Footer from '../components/Footer.astro'
       rel='stylesheet'
     />
     <meta name='generator' content={Astro.generator} />
-    <title>A&V Wedding</title>
+    <SEO 
+      title="Andrés & Valentina - Nuestra Boda"
+      description="Te invitamos a celebrar nuestro matrimonio. Conoce nuestra historia, detalles del evento y confirma tu asistencia."
+      schemaType="Event"
+    />
   </head>
   <body>
     <main>

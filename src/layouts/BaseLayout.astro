@@ -1,0 +1,41 @@
+---
+import '../styles/global.css'
+import '../styles/variables.css'
+import Button from '../atoms/Button'
+import SEO from '../components/SEO.astro'
+---
+
+<!doctype html>
+<html lang='es' class='scroll-smooth'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Alice&family=Almarai:wght@300;400;700;800&display=swap'
+      rel='stylesheet'
+    />
+    <meta name='generator' content={Astro.generator} />
+    <SEO 
+      schemaType="WebPage"
+    />
+  </head>
+  <body>
+    <main>
+      <Button client:load label='Regresar' route='/' />
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+  }
+</style>
