@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import SEO from '../components/SEO.astro'
+---
+
+<BaseLayout>
+  <SEO 
+    slot="head"
+    title="Galería - Andrés & Valentina"
+    description="Galería de fotos de nuestra boda"
+    noindex={true}
+    schemaType="WebPage"
+  />
+  
+  <article class="p-8 max-w-6xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Galería de Fotos</h1>
+    <p class="text-lg mb-4">
+      Las fotos del evento estarán disponibles después de la celebración.
+    </p>
+    <!-- Contenido de la galería -->
+  </article>
+</BaseLayout>

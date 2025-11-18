@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import SEO from '../components/SEO.astro'
+---
+
+<BaseLayout>
+  <SEO 
+    slot="head"
+    title="Código de Vestimenta - Andrés & Valentina"
+    description="Información sobre el código de vestimenta para nuestra boda"
+    noindex={true}
+    schemaType="WebPage"
+  />
+  
+  <article class="p-8 max-w-6xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Código de Vestimenta</h1>
+    <p class="text-lg mb-4">
+      Información específica sobre el dress code para nuestro evento.
+    </p>
+    <!-- Contenido del dress code -->
+  </article>
+</BaseLayout>
