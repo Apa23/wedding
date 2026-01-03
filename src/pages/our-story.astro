@@ -1,0 +1,70 @@
+---
+import LargeArticle from '../components/LargeArticle.astro'
+import SplitArticle from '../components/SplitArticle.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout pageTitle="Nuestra Historia">
+  <SplitArticle id='the-begining' variant='fit'>
+    <section class='max-w-1/2' slot='right'>
+      <h2 class='text-4xl mb-4'>El inicio de nuestra historia</h2>
+      <p class='text-justify leading-6'>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+        consequuntur deserunt porro, optio doloremque voluptas omnis ipsum
+        maxime ipsam repellat cupiditate dolor aut, recusandae dignissimos dicta
+        unde perferendis quam! Necessitatibus. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Sit voluptatum at sequi? Vero quibusdam
+        suscipit autem molestias blanditiis praesentium natus nisi. Libero velit
+        numquam ratione non aliquam recusandae, fugit cupiditate. Lorem ipsum,
+        dolor sit amet consectetur adipisicing elit. Tempore consequuntur
+        deserunt porro, optio doloremque voluptas omnis ipsum maxime ipsam
+        repellat cupiditate dolor aut, recusandae dignissimos dicta unde
+        perferendis quam! Necessitatibus.
+      </p>
+    </section>
+    <section slot='left'>
+      <img
+        src='/assets/about-us-image.png'
+        alt='Nuestra Historia - Andrés y Valentina'
+        class='w-full h-full rounded-sm shadow-sm'
+      />
+    </section>
+  </SplitArticle>
+  <LargeArticle id='walking-with-god' role='section'>
+    <h2 class='text-4xl mb-4' slot='title'>Caminando con Dios</h2>
+    <p class='text-justify leading-6 mt-2' slot='content'>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+      consequuntur deserunt porro, optio doloremque voluptas omnis ipsum maxime
+      ipsam repellat cupiditate dolor aut, recusandae dignissimos dicta unde
+      perferendis quam! Necessitatibus. Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Sit voluptatum at sequi? Vero quibusdam suscipit autem
+      molestias blanditiis praesentium natus nisi. Libero velit numquam ratione
+      non aliquam recusandae, fugit cupiditate. 
+    </p>
+  </LargeArticle>
+  <SplitArticle id='way-to-yes' variant='fit'>
+    <section class='max-w-1/2' slot='left'>
+      <h2 class='text-4xl mb-4'>De camino al si</h2>
+      <p class='text-justify'>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+        consequuntur deserunt porro, optio doloremque voluptas omnis ipsum
+        maxime ipsam repellat cupiditate dolor aut, recusandae dignissimos dicta
+        unde perferendis quam! Necessitatibus. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Sit voluptatum at sequi? Vero quibusdam
+        suscipit autem molestias blanditiis praesentium natus nisi. Libero velit
+        numquam ratione non aliquam recusandae, fugit cupiditate. Lorem ipsum,
+        dolor sit amet consectetur adipisicing elit. Tempore consequuntur
+        deserunt porro, optio doloremque voluptas omnis ipsum maxime ipsam
+        repellat cupiditate dolor aut, recusandae dignissimos dicta unde
+        perferendis quam! Necessitatibus.
+      </p>
+    </section>
+    <section slot='right'>
+      <img
+        src='/assets/about-us-image.png'
+        alt='Nuestra Historia - Andrés y Valentina'
+        class='w-full h-full rounded-sm shadow-sm'
+      />
+    </section>
+  </SplitArticle>
+</BaseLayout>

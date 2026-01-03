@@ -1,16 +1,109 @@
 ---
-import Banner from '../components/Banner.astro'
 import MainLayout from '../layouts/MainLayout.astro'
-import EventDetails from '../organisms/EventDetails.astro'
-import EventRules from '../organisms/EventRules.astro'
-import OurStory from '../organisms/OurStory.astro'
-import ContactUs from '../organisms/ContactUs.astro'
+import EventDetails from '../components/EventDetails.astro'
+import SplitArticle from '../components/SplitArticle.astro'
+import LargeArticle from '../components/LargeArticle.astro'
+import Button from '../components/ui/Button'
+import Carrousel from '../components/Carrousel'
+import Countdown from '../components/Countdown'
+import Banner from '../components/Banner.astro'
 ---
 
 <MainLayout>
   <Banner />
-  <OurStory />
+  <SplitArticle id='our-story'>
+    <section class='w-1/2 flex flex-col gap-8' slot='left'>
+      <h2 class='text-5xl'>Nuestra Historia</h2>
+      <p class='text-justify leading-6'>
+        Hace siete años, nuestros corazones se encontraron y, sin saberlo,
+        comenzó la más hermosa de las aventuras. Desde entonces, hemos
+        compartido risas, sueños, viajes y mil pequeñas historias que nos
+        unieron cada día más. Entre momentos simples y memorables, aprendimos
+        que el amor se construye con paciencia, complicidad y ternura. Hoy,
+        mirando atrás, vemos un recorrido lleno de bendiciones y promesas
+        cumplidas. Cada paso nos ha llevado hasta este instante, donde decimos
+        “sí” al proposito de Dios para nosotros. Esta historia está escrita con
+        cariño, detalles y destino.
+      </p>
+      <Button client:only label='Conoce más' route='/our-story' />
+    </section>
+    <section class='w-1/2 flex justify-center items-center' slot='right'>
+      <img
+        src='/assets/about-us-image.png'
+        alt='Nuestra Historia - Andrés y Valentina'
+        class='h-full rounded-sm shadow-sm'
+        style='object-fit: cover;'
+      />
+    </section>
+  </SplitArticle>
   <EventDetails />
-  <EventRules />
-  <ContactUs />
+  <LargeArticle id='countdown' theme='secondary'>
+    <div slot='title' class='flex flex-col items-center gap-4'>
+      <h3 class='text-2xl'>27 de Junio 2026</h3>
+      <h2 class='text-4xl'>Nos vemos en el altar</h2>
+    </div>
+    <Countdown client:only slot='content' targetDate='2026-06-27T17:00:00' />
+  </LargeArticle>
+  <SplitArticle id='event-rules'>
+    <section class='w-1/2 flex justify-center items-center' slot='left'>
+      <img
+        src='/assets/event-rules-image.png'
+        alt='Event Rules Image'
+        class='w-full h-full rounded-sm shadow-sm'
+      />
+    </section>
+    <section class='w-1/2 flex flex-col gap-8' slot='right'>
+      <h2 class='text-5xl'>Detalles importantes</h2>
+      <ul class='list-disc list-inside text-justify leading-10'>
+        <li>Respetar el código de vestuario, colores reservados.</li>
+        <li>Llegar a tiempo, 15 min como minimo.</li>
+        <li>No traer alimentos ni bebidas.</li>
+        <li>
+          Confirma tu asistencia, solo para ti, antes de la fecha indicada.
+        </li>
+        <li>No cambiar lugares ni asientos el día del evento.</li>
+        <li>Regalos: <b>Lluvia de sobres.</b></li>
+      </ul>
+      <Button client:only label='Código de vestuario' route='/dress-code' />
+    </section>
+  </SplitArticle>
+
+  <SplitArticle id='contact-us' theme='secondary'>
+    <section class='w-1/2' slot='left'>
+      <div class='flex flex-col gap-4 mt-16'>
+        <h2 class='text-5xl'>Contáctanos</h2>
+        <p class='leading-6'>
+          Queremos que disfrutes este día especial tanto como nosotros.<br /> Si necesitas
+          más detalles o tienes alguna inquietud, Escribenos.
+        </p>
+        <div class='flex gap-4'>
+          <Button
+            label='Escribir a Andrés'
+            route='https://wa.me/3168219263'
+            variant='secondary'
+          />
+          <Button
+            label='Escribir a Valentina'
+            route='https://wa.me/3053237712'
+            variant='secondary'
+          />
+        </div>
+      </div>
+    </section>
+    <section slot='right'>
+      <img
+        src='/assets/about-us-image.png'
+        alt='Nuestra Historia - Andrés y Valentina'
+        class='h-full rounded-sm shadow-sm'
+        style='object-fit: cover;'
+      />
+    </section>
+  </SplitArticle>
 </MainLayout>
+
+<style>
+  #gifts {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+  }
+</style>
