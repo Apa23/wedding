@@ -1,0 +1,31 @@
+---
+type Props = {
+  id?: string
+  theme?: 'primary' | 'secondary'
+  variant?: 'full' | 'fit'
+}
+
+const { id, theme, variant = 'full' } = Astro.props
+---
+
+<article
+  id={id}
+  class={`flex flex-col items-center justify-center px-35 mx-auto ${theme === 'secondary' ? 'secondary' : 'primary'} ${variant === 'full' ? 'h-dvh' : 'h-fit py-12 my-12'}`}
+>
+  <slot name='heading' />
+  <div class='flex flex-row gap-24 w-full'>
+    <slot name='left' />
+    <slot name='right' />
+  </div>
+</article>
+
+<style>
+  article.primary {
+    color: var(--color-text);
+  }
+
+  article.secondary {
+    color: var(--color-accent);
+    background-color: var(--color-primary);
+  }
+</style>

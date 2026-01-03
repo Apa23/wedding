@@ -1,0 +1,34 @@
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 2rem;
+  border: none;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+}
+
+button.primary {
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+}
+
+button.secondary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+button.dark {
+  background-color: none;
+  color: var(--color-text);
+  border: 3px solid var(--color-text);
+  font-weight: bold;
+
+}

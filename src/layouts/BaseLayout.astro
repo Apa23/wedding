@@ -1,8 +1,13 @@
 ---
 import '../styles/global.css'
 import '../styles/variables.css'
-import Button from '../atoms/Button'
+import Button from '../components/ui/Button'
 import SEO from '../components/SEO.astro'
+import { ClientRouter } from 'astro:transitions'
+import Footer from '../components/Footer.astro'
+import Logo from '../components/ui/logo.astro'
+
+const pageTitle = Astro.props.pageTitle || 'Andrés & Valentina'
 ---
 
 <!doctype html>
@@ -18,15 +23,28 @@ import SEO from '../components/SEO.astro'
       rel='stylesheet'
     />
     <meta name='generator' content={Astro.generator} />
-    <SEO 
-      schemaType="WebPage"
-    />
+    <SEO schemaType='WebPage' />
+    <ClientRouter />
   </head>
   <body>
-    <main>
-      <Button client:load label='Regresar' route='/' />
+    <header class='flex items-center justify-between py-8 px-8 w-full z-10'>
+      <Logo style='color: var(--color-text)' />
+      <h1 class='text-3xl text-[var(--color-text)]'>{pageTitle}</h1>
+      <nav class='flex flex-row items-center justify-between gap-4'>
+        <Button
+          client:load
+          id='back-button'
+          label='Regresar'
+          route='/'
+          variant='dark'
+          className='flex justify-center items-center gap-1 ml-10 text-sm'
+        />
+      </nav>
+    </header>
+    <main class="mb-20">
       <slot />
     </main>
+    <Footer />  
   </body>
 </html>
 
@@ -36,6 +54,10 @@ import SEO from '../components/SEO.astro'
     margin: 0;
     width: 100%;
     height: 100%;
+    background-color: var(--color-accent);
+  }
+
+  header {
     background-color: var(--color-background);
   }
 </style>

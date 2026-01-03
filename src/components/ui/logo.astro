@@ -1,0 +1,11 @@
+---
+type Props = {
+  style?: string
+}
+
+const { style } = Astro.props
+---
+
+<p id='logo' class={`text-2xl ${!style ? 'text-white ' : ''}`} style={style}>
+  <span class='text-4xl'>A</span> & <span class='text-4xl'>V</span>
+</p>

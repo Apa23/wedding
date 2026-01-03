@@ -2,38 +2,37 @@
 import '../styles/variables.css'
 ---
 
-<article id='event-details' class='p-8 gap-8 relative flex justify-center z-0'>
-  <section class='p-8 rounded-sm shadow-xl flex flex-col gap-4 w-1/3'>
-    <h2 class='text-2xl font-bold'>Acompañanos en cada momento</h2>
+<article
+  id='event-details'
+  class='h-dvh gap-8 relative flex justify-center items-center z-0'
+>
+  <section
+    class='px-12 rounded-sm shadow-xl flex flex-col justify-center item gap-6 w-fit h-2/3'
+  >
+    <h2 class='text-3xl font-semibold'>Acompañanos en cada momento</h2>
     <div>
-      <h3 class='text-lg font-bold'>Lugar</h3>
-      <p>
+      <h3 class='text-2xl font-semibold mb-2'>Lugar</h3>
+      <p class='text-lg mb-6 leading-8'>
         Chuscalito Sabores y Celebraciones<br />
-        Av. Las Palmas #Km 7 El Poblado<br />
+        Av. Las Palmas Km 7 - El Poblado<br />
         Medellín, Antioquia
       </p>
-    </div>
-    <div>
-      <h3 class='text-lg font-bold'>Día</h3>
-      <p>27 de Junio de 2026</p>
-    </div>
-    <div>
-      <h3 class='text-lg font-bold'>Minuto a minuto</h3>
-      <p>
-        5:00 PM - Ceremonia<br />
-        6:00 PM - Cóctel y fotos<br />
-        7:00 PM - Cena y celebración<br />
-        11:00 PM - Despedida
-      </p>
+      <h3 class='text-2xl font-semibold mb-2'>Minuto a minuto</h3>
+      <ul class='list-disc list-inside text-lg leading-8'>
+        <li>5:00 P.M. - Ceremonia</li>
+        <li>6:00 P.M. - Cóctel y fotos</li>
+        <li>7:00 P.M. - Cena y celebración</li>
+        <li>11:00 P.M. - Despedida</li>
+      </ul>
     </div>
   </section>
-  <section class='rounded-sm shadow-xl'>
+  <section class='rounded-sm shadow-xl w-1/2 h-2/3'>
     <iframe
       class='rounded-sm shadow-xl'
       src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3635252358436!2d-75.5525986!3d6.2156975999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442822e989b55d%3A0x10cb33ea47f85409!2sChuscalito%20Sabores%20y%20Celebraci%C3%B3n!5e0!3m2!1ses!2sco!4v1762195634865!5m2!1ses!2sco'
-      width='600'
-      height='450'
       style='border:0;'
+      width='100%'
+      height='100%'
       allowfullscreen=''
       loading='lazy'
       referrerpolicy='no-referrer-when-downgrade'></iframe>
@@ -41,6 +40,10 @@ import '../styles/variables.css'
 </article>
 
 <style>
+  article {
+    color: var(--color-text);
+  }
+
   #event-details::before {
     content: '';
     position: absolute;

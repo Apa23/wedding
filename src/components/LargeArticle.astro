@@ -1,0 +1,27 @@
+---
+type Props = {
+  id?: string
+  theme?: 'primary' | 'secondary'
+  role?: 'article' | 'section'
+}
+
+const { id, theme, role = 'article' } = Astro.props
+---
+
+<article
+  id={id}
+  class={`w-full flex flex-col px-35 ${theme === 'secondary' ? 'secondary' : 'primary'} ${role === 'article' ? 'gap-12 items-center justify-center mx-auto py-25' : ''}`}
+>
+  <slot name='title' />
+  <slot name='content' />
+</article>
+<style>
+  article.primary {
+    color: var(--color-text);
+  }
+
+  article.secondary {
+    color: var(--color-accent);
+    background-color: var(--color-primary);
+  }
+</style>

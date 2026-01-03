@@ -1,39 +1,25 @@
 ---
-
+import Carrousel from './Carrousel'
 ---
 
-<div class='banner'>
-  <div class='banner-content'>
-    <h2 class='mt-2 text-4xl max-w-xl mx-auto font-bold'>El gran si</h2>
-    <h1 class='mt-2 text-6xl font-bold'>Andrés & Valentina</h1>
-    <p class='mt-2 text-xl max-w-xl mx-auto'>Eclesiastes 4:12</p>
-  </div>
-</div>
-
-<style>
-  .banner {
-    position: relative;
-    height: 100vh;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: brightness(0.7);
-  }
-
-  .banner::before {
-    content: '';
-    position: absolute;
-    inset: 0; /* top:0, right:0, bottom:0, left:0 */
-    background-image: url('/assets/banner-background.png');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.6);
-    z-index: 0;
-  }
-  .banner-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
-</style>
+<article class='relative w-full h-dvh overflow-hidden'>
+  <section
+    class='z-1 relative flex flex-col items-center justify-center text-center h-full'
+    style={{
+      color: 'var(--color-accent)'
+    }}
+  >
+    <h1 class='mt-2 text-7xl'>Andrés & Valentina</h1>
+    <p class='mt-2 text-xl max-w-xl mx-auto'>
+      "La cuerda de tres hilos no se rompe fácilmente"
+    </p>
+    <p class='mt-2 text-md max-w-xl mx-auto font-bold'>Eclesiastes 4:12</p>
+  </section>
+  <Carrousel
+    client:only
+    autoPlay
+    isAbsolute
+    size='full'
+    images={['/assets/banner-background.png', '/assets/event-details-bg.png']}
+  />
+</article>
