@@ -1,0 +1,25 @@
+---
+type Props = {
+  dayOfWeek: string
+  month: string
+  day: string
+  year: string
+  time: string
+}
+
+const { dayOfWeek, month, day, year, time } = Astro.props
+---
+
+<section class='flex items-center justify-center gap-3'>
+  <div class='border-r-2 pr-4'>
+    <h5 class='text-3xl'>{dayOfWeek}</h5>
+  </div>
+  <div class='flex flex-col items-center justify-center gap-2'>
+    <p>{month}</p>
+    <h4 class='text-4xl leading-3'>{day}</h4>
+    <p class='m-3'>{year}</p>
+  </div>
+  <div class='border-l-2 pl-4'>
+    <h5 class='text-3xl'>{time}</h5>
+  </div>
+</section>
