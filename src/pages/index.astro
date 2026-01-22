@@ -7,6 +7,8 @@ import Button from '../components/ui/Button'
 import Carrousel from '../components/Carrousel'
 import Countdown from '../components/Countdown'
 import Banner from '../components/Banner.astro'
+import StyledDate from '../components/StyledDate.astro'
+import ColorDots from '../components/ColorDots.astro'
 ---
 
 <MainLayout>
@@ -36,14 +38,45 @@ import Banner from '../components/Banner.astro'
       />
     </section>
   </SplitArticle>
-  <EventDetails />
   <LargeArticle id='countdown' theme='secondary'>
-    <div slot='title' class='flex flex-col items-center gap-4'>
-      <h3 class='text-2xl'>27 de Junio 2026</h3>
-      <h2 class='text-4xl'>Nos vemos en el altar</h2>
-    </div>
+    <section slot='title' class='flex flex-col items-center gap-4 mb-6'>
+      <StyledDate
+        dayOfWeek='Sábado'
+        month='Jun'
+        day='27'
+        year='2026'
+        time='5:00 pm'
+      />
+      <h2 class='text-3xl'>Nos vemos en el altar</h2>
+    </section>
     <Countdown client:only slot='content' targetDate='2026-06-27T17:00:00' />
   </LargeArticle>
+  <EventDetails />
+  <LargeArticle id='dress-code' theme='secondary'>
+    <section slot='title'>
+      <div class='flex flex-col items-center gap-2'>
+        <h3 class='text-4xl'>Código de vestuario</h3>
+        <h4 class='text-2xl'>Elegante</h4>
+      </div>
+    </section>
+    <section slot='content'>
+      <div class='flex flex-col items-center gap-4'>
+        <p class='text-center text-md'>Colores reservados</p>
+        <div class='grid grid-cols-3 gap-2 '>
+          <ColorDots color='--reserved-color1' label='Café claro' />
+          <ColorDots color='--reserved-color2' label='Beige' />
+          <ColorDots color='--color-accent' label='Blanco' />
+        </div>
+        <Button
+          client:only
+          variant='secondary'
+          label='Ver detalles'
+          route='/dress-code'
+        />
+      </div>
+    </section>
+  </LargeArticle>
+
   <SplitArticle id='event-rules'>
     <section class='w-1/2 flex justify-center items-center' slot='left'>
       <img
@@ -64,7 +97,6 @@ import Banner from '../components/Banner.astro'
         <li>No cambiar lugares ni asientos el día del evento.</li>
         <li>Regalos: <b>Lluvia de sobres.</b></li>
       </ul>
-      <Button client:only label='Código de vestuario' route='/dress-code' />
     </section>
   </SplitArticle>
 
