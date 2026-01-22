@@ -8,6 +8,6 @@ const { color, label } = Astro.props
 ---
 
 <section class='flex flex-col items-center gap-2'>
-  <div class={`bg-[var(${color})] rounded-4xl p-5 border-2 border-white`}></div>
+  <div class='rounded-4xl p-5 border-2 border-white' style={`background-color: var(${color})`}></div>
   <p>{label}</p>
 </section>
