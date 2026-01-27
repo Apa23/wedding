@@ -1,38 +1,59 @@
 ---
-import '../styles/variables.css'
 import Button from './ui/Button'
+import Icon from './ui/Icon.astro'
+
+import '../styles/variables.css'
 ---
 
 <article
   id='event-details'
-  class='h-dvh gap-8 relative flex justify-center items-center z-0'
+  class='h-dvh relative z-0 flex justify-center items-center'
 >
-  <section
-    class='px-12 rounded-sm shadow-xl flex flex-col justify-center gap-6 w-fit h-2/3'
-  >
-    <h2 class='text-4xl font-semibold'>Locación</h2>
-    <div>
-      <h3 class='text-2xl font-semibold mb-2'>Chuscalito Sabores y Celebraciones</h3>
-      <p class='text-lg mb-6 leading-8'>
-        Av. Las Palmas Km 7 - El Poblado<br />
-        Medellín, Antioquia
-      </p>
-      <Button
-        label='Ver en Google Maps'
-        route='https://maps.app.goo.gl/46XrVaSC6EZFWrn7A'
-        target='_blank'
-      />
-    </div>
-  </section>
-  <section class='rounded-sm shadow-xl w-1/2 h-2/3 px-12 flex flex-col justify-center gap-6'>
-    <h2 class='text-4xl font-semibold mb-6'>Acompañanos en cada momento</h2>
-     <ul class='list-disc list-inside text-lg leading-8'>
-        <li>5:00 P.M. - Ceremonia</li>
-        <li>6:00 P.M. - Cóctel y fotos</li>
-        <li>7:00 P.M. - Cena y celebración</li>
-        <li>11:00 P.M. - Despedida</li>
-      </ul>
-  </section>
+  <div class='z-1 w-full h-fit gap-8 flex justify-center items-center'>
+    <section
+      class='p-12 rounded-sm shadow-xl flex flex-col justify-start gap-6 w-fit'
+      style={{
+        height: '-webkit-fill-available'
+      }}
+    >
+      <h2 class='text-4xl font-semibold'>Locación</h2>
+      <div>
+        <h3 class='text-2xl font-semibold mb-2'>
+          Chuscalito Sabores y Celebraciones
+        </h3>
+        <p class='text-lg mb-6 leading-8'>
+          Av. Las Palmas Km 7 - El Poblado<br />
+          Medellín, Antioquia
+        </p>
+        <Button
+          label='Ver en Google Maps'
+          route='https://maps.app.goo.gl/46XrVaSC6EZFWrn7A'
+          target='_blank'
+        />
+      </div>
+    </section>
+    <section
+      class='rounded-sm shadow-xl w-1/2 p-12 flex flex-col justify-start gap-6'
+      style={{
+        height: '-webkit-fill-available'
+      }}
+    >
+      <h2 class='text-4xl font-semibold mb-6 text-center'>
+        Acompañanos en cada momento
+      </h2>
+      <div class='flex gap-10 justify-center'>
+        <Icon name='Ceremonia' description='5:00 P.M.' iconName='rings' />
+        <Icon name='Coctel' description='6:00 P.M.' iconName='cheers' />
+        <Icon name='Cena' description='7:00 P.M.' iconName='dinner' />
+        <Icon name='Celebración' description='7:30 P.M.' iconName='party' />
+        <Icon
+          name='Despedida'
+          description='11:00 P.M.'
+          iconName='wedding-sign'
+        />
+      </div>
+    </section>
+  </div>
 </article>
 
 <style>
