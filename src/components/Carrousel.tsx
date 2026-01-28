@@ -39,7 +39,7 @@ const Carrousel = ({
           alt={`Carrousel image ${index + 1}`}
           className={`w-${size} h-auto ${
             isAbsolute && 'absolute'
-          } top-0 left-0 object-cover transition-opacity duration-1000 ease-in-out max-lg:h-full`}
+          } top-0 left-0 object-cover transition-opacity duration-1000 ease-in-out h-full`}
           style={{
             opacity: index === currentIndex ? 1 : 0,
             filter: 'brightness(0.5)',
