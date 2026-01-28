@@ -1,0 +1,39 @@
+.menu {
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-primary);
+    flex-direction: column;
+    justify-content: center;
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  nav {
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      gap: 2rem;
+      height: 100%;
+    }
+  }
+}
+
+.menu.menu-open {
+  @media (max-width: 768px) {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.menu.menu-closed {
+  @media (max-width: 768px) {
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+}
