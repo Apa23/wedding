@@ -29,7 +29,7 @@ const pageTitle = Astro.props.pageTitle || 'Andrés & Valentina'
   <body>
     <header class='flex items-center justify-between py-8 px-8 w-full z-10'>
       <Logo style='color: var(--color-text)' />
-      <h1 class='text-3xl text-[var(--color-text)]'>{pageTitle}</h1>
+      <h1 class='text-3xl text-[var(--color-text)] hidden lg:block'>{pageTitle}</h1>
       <nav class='flex flex-row items-center justify-between gap-4'>
         <Button
           client:load
@@ -41,7 +41,7 @@ const pageTitle = Astro.props.pageTitle || 'Andrés & Valentina'
         />
       </nav>
     </header>
-    <main class="mb-20">
+    <main class="lg:mb-20">
       <slot />
     </main>
     <Footer />  
