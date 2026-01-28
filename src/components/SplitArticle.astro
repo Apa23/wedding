@@ -10,13 +10,13 @@ const { id, theme, variant = 'full' } = Astro.props
 
 <article
   id={id}
-  class={`flex flex-col items-center justify-center px-35 mx-auto ${theme === 'secondary' ? 'secondary' : 'primary'} ${variant === 'full' ? 'h-dvh' : 'h-fit py-12 my-12'}`}
+  class={`flex flex-col items-center justify-center mx-auto px-10 lg:px-35 ${theme === 'secondary' ? 'secondary' : 'primary'} ${variant === 'full' ? 'lg:h-dvh py-20 lg:py-0 ' : 'h-fit p-10 lg:py-12 lg:my-12'}`}
 >
   <slot name='heading' />
-  <div class='flex flex-row gap-24 w-full'>
+  <section class='flex flex-col lg:flex-row gap-24 w-full'>
     <slot name='left' />
     <slot name='right' />
-  </div>
+  </section>
 </article>
 
 <style>

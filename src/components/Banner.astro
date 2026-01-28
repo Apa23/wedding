@@ -4,16 +4,16 @@ import Carrousel from './Carrousel'
 
 <article class='relative w-full h-dvh overflow-hidden'>
   <section
-    class='z-1 relative flex flex-col items-center justify-center text-center h-full'
+    class='z-1 relative flex flex-col items-center justify-center text-center h-full max-md:px-2'
     style={{
       color: 'var(--color-accent)'
     }}
   >
-    <h1 class='mt-2 text-7xl'>Andrés & Valentina</h1>
-    <p class='mt-2 text-xl max-w-xl mx-auto'>
+    <h1 class='mt-2 text-7xl max-md:text-5xl'>Andrés & Valentina</h1>
+    <p class='mt-2 text-xl max-w-xl mx-auto max-md:text-sm'>
       "La cuerda de tres hilos no se rompe fácilmente"
     </p>
-    <p class='mt-2 text-md max-w-xl mx-auto font-bold'>Eclesiastes 4:12</p>
+    <p class='mt-2 text-md max-w-xl mx-auto font-bold md:text-xl'>Eclesiastes 4:12</p>
   </section>
   <Carrousel
     client:only

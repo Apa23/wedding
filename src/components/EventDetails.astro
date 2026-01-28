@@ -7,21 +7,21 @@ import '../styles/variables.css'
 
 <article
   id='event-details'
-  class='h-dvh relative z-0 flex justify-center items-center'
+  class='lg:h-dvh relative z-0 flex justify-center items-center max-md:py-15 max-md:px-10'
 >
-  <div class='z-1 w-full h-fit gap-8 flex justify-center items-center'>
+  <div class='z-1 w-full h-fit gap-8 flex justify-center items-center  max-md:flex-col '>
     <section
-      class='p-12 rounded-sm shadow-xl flex flex-col justify-start gap-6 w-fit'
+      class='p-10 lg:p-12 rounded-sm shadow-xl flex flex-col justify-start gap-3 lg:gap-6 w-fit'
       style={{
         height: '-webkit-fill-available'
       }}
     >
-      <h2 class='text-4xl font-semibold'>Locación</h2>
+      <h2 class='text-3xl lg:text-4xl font-semibold'>Locación</h2>
       <div>
-        <h3 class='text-2xl font-semibold mb-2'>
+        <h3 class='text-xl lg:text-2xl font-semibold mb-2'>
           Chuscalito Sabores y Celebraciones
         </h3>
-        <p class='text-lg mb-6 leading-8'>
+        <p class='text-md lg:text-lg mb-6 leading-8'>
           Av. Las Palmas Km 7 - El Poblado<br />
           Medellín, Antioquia
         </p>
@@ -33,19 +33,19 @@ import '../styles/variables.css'
       </div>
     </section>
     <section
-      class='rounded-sm shadow-xl w-1/2 p-12 flex flex-col justify-start gap-6'
+      class='rounded-sm shadow-xl w-full lg:w-1/2 p-10 lg:p-12 flex flex-col justify-start gap-6'
       style={{
         height: '-webkit-fill-available'
       }}
     >
-      <h2 class='text-4xl font-semibold mb-6 text-center'>
+      <h2 class='text-3xl lg:text-4xl font-semibold mb-2 lg:mb-6 lg:text-center'>
         Acompañanos en cada momento
       </h2>
-      <div class='flex gap-10 justify-center'>
+      <div class='flex gap-6 lg:gap-10 justify-center flex-wrap'>
         <Icon name='Ceremonia' description='5:00 P.M.' iconName='rings' />
         <Icon name='Coctel' description='6:00 P.M.' iconName='cheers' />
         <Icon name='Cena' description='7:00 P.M.' iconName='dinner' />
-        <Icon name='Celebración' description='7:30 P.M.' iconName='party' />
+        <Icon name='Fiesta' description='7:30 P.M.' iconName='party' />
         <Icon
           name='Despedida'
           description='11:00 P.M.'

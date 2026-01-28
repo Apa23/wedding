@@ -48,12 +48,12 @@ const Countdown = ({ targetDate }: CountdownProps) => {
   const timeUnits = [
     { value: timeLeft.days, label: 'Días' },
     { value: timeLeft.hours, label: 'Horas' },
-    { value: timeLeft.minutes, label: 'Minutos' },
-    { value: timeLeft.seconds, label: 'Segundos' }
+    { value: timeLeft.minutes, label: 'Mins' },
+    { value: timeLeft.seconds, label: 'Segs' }
   ]
 
   return (
-    <div className='flex flex-wrap justify-center gap-8 '>
+    <div className='flex flex-wrap justify-center lg:gap-8  max-lg:mb-15'>
       {timeUnits.map((unit) => (
         <div
           key={unit.label}

@@ -12,7 +12,7 @@ const { dayOfWeek, month, day, year, time } = Astro.props
 
 <section class='flex items-center justify-center gap-3'>
   <div class='border-r-2 pr-4'>
-    <h5 class='text-3xl'>{dayOfWeek}</h5>
+    <h5 class='text-2xl lg:text-3xl'>{dayOfWeek}</h5>
   </div>
   <div class='flex flex-col items-center justify-center gap-2'>
     <p>{month}</p>
@@ -20,6 +20,6 @@ const { dayOfWeek, month, day, year, time } = Astro.props
     <p class='m-3'>{year}</p>
   </div>
   <div class='border-l-2 pl-4'>
-    <h5 class='text-3xl'>{time}</h5>
+    <h5 class='text-2xl lg:text-3xl'>{time}</h5>
   </div>
 </section>
