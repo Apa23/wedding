@@ -7,8 +7,13 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
 <BaseLayout pageTitle='Código de Vestuario'>
   <SplitArticle id='dress-code-men' variant='fit'>
-    <section class='max-w-1/2' slot='left'>
-      <h2 class='text-4xl mb-4'>Para ellos</h2>
+    <section class='w-full lg:max-w-1/2' slot='left'>
+      <h2 class='text-3xl lg:text-4xl mb-4'>Para ellos</h2>
+      <img
+        src='/assets/about-us-image.png'
+        alt='Nuestra Historia - Andrés y Valentina'
+        class='w-full h-full rounded-sm shadow-sm block lg:hidden mb-4'
+      />
       <p class='text-justify'>
         El código de vestuario para caballeros es elegante–formal, pensado para
         una celebración especial pero conservando la comodidad de todos nuestros
@@ -20,7 +25,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         imagen sobria, cuidada y acorde con la estética de nuestra boda.
       </p>
     </section>
-    <section slot='right'>
+    <section slot='right' class="lg:block hidden">
       <img
         src='/assets/about-us-image.png'
         alt='Nuestra Historia - Andrés y Valentina'
@@ -29,8 +34,13 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     </section>
   </SplitArticle>
   <SplitArticle id='dress-code-women' variant='fit'>
-    <section class='max-w-1/2' slot='right'>
-      <h2 class='text-4xl mb-4'>Para ellas</h2>
+    <section class='w-full lg:max-w-1/2' slot='right'>
+      <h2 class='text-3xl lg:text-4xl mb-4'>Para ellas</h2>
+       <img
+        src='/assets/about-us-image.png'
+        alt='Nuestra Historia - Andrés y Valentina'
+        class='w-full h-full rounded-sm shadow-sm block lg:hidden mb-4'
+      />
       <p class='text-justify'>
         El código de vestuario para damas es elegante y sofisticado, manteniendo
         un equilibrio entre formalidad y comodidad. Se sugieren vestidos largos
@@ -42,7 +52,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         especial de nuestra celebración.
       </p>
     </section>
-    <section slot='left'>
+    <section slot='left' class="lg:block hidden">
       <img
         src='/assets/about-us-image.png'
         alt='Nuestra Historia - Andrés y Valentina'
