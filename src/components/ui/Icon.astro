@@ -3,30 +3,44 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 
 interface Props {
-  name: string
+  name?: string
   description?: string
   iconName: string
   color?: string
   size?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
-const { name, description, iconName, color = 'currentColor', size = 'md' } = Astro.props
+const {
+  name,
+  description,
+  iconName,
+  color = 'currentColor',
+  size = 'md'
+} = Astro.props
 
 // Leer el archivo SVG
-const svgPath = join(process.cwd(), 'public', 'assets', 'icons', `${iconName}.svg`)
+const svgPath = join(
+  process.cwd(),
+  'public',
+  'assets',
+  'icons',
+  `${iconName}.svg`
+)
 let svgContent = ''
 
 try {
   svgContent = readFileSync(svgPath, 'utf-8')
   // Reemplazar el fill hardcodeado por el color dinámico
   svgContent = svgContent.replace(/fill="#[0-9A-Fa-f]{6}"/g, `fill="${color}"`)
-  
+
   // Añadir viewBox si no existe
   if (!svgContent.includes('viewBox')) {
-    svgContent = svgContent.replace(/<svg([^>]*)width="512"([^>]*)height="512"/, 
-      '<svg$1viewBox="0 0 512 512"$2')
+    svgContent = svgContent.replace(
+      /<svg([^>]*)width="512"([^>]*)height="512"/,
+      '<svg$1viewBox="0 0 512 512"$2'
+    )
   }
-  
+
   // Eliminar width y height fijos para que use el tamaño del contenedor
   svgContent = svgContent.replace(/width="[^"]*"/g, 'width="100%"')
   svgContent = svgContent.replace(/height="[^"]*"/g, 'height="100%"')
@@ -35,15 +49,15 @@ try {
 }
 
 const sizeClasses = {
-  sm: 'w-12 h-12',
+  sm: 'w-10 h-10',
   md: 'w-16 h-16',
   lg: 'w-24 h-24',
   xl: 'w-32 h-32'
 }
 ---
 
-<div class="flex flex-col items-center justify-center">
+<div class='flex flex-col items-center justify-center'>
   <div class={`${sizeClasses[size]} mb-3`} set:html={svgContent} />
-  <h5 class="text-md font-semibold">{name}</h5>
-  {description && <p class="text-center text-sm">{description}</p>}
+  {name && <h5 class='text-md font-semibold'>{name}</h5>}
+  {description && <p class='text-center text-sm'>{description}</p>}
 </div>
