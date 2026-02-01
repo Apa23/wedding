@@ -53,7 +53,7 @@ const Countdown = ({ targetDate }: CountdownProps) => {
   ]
 
   return (
-    <div className='flex flex-wrap justify-center lg:gap-8  max-lg:mb-15'>
+    <div className='flex flex-wrap justify-center lg:gap-8 mb-15'>
       {timeUnits.map((unit) => (
         <div
           key={unit.label}
