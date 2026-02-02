@@ -55,8 +55,8 @@ const NavMenu = () => {
           <a href='#our-story' onClick={handleMenuClick}>
             Nuestra Historia
           </a>
-          <a href='#event-details' onClick={handleMenuClick}>Detalles del evento</a>
-          <a href='#contact-us' onClick={handleMenuClick}>Contáctanos</a>
+          <a href='#countdown' onClick={handleMenuClick}>Detalles del evento</a>
+          <a href='#contact-us' onClick={handleMenuClick}>Escríbenos</a>
         </nav>
       </section>
     </article>

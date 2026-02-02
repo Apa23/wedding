@@ -53,11 +53,11 @@ const Countdown = ({ targetDate }: CountdownProps) => {
   ]
 
   return (
-    <div className='flex flex-wrap justify-center lg:gap-8 mb-15'>
+    <div className='flex flex-wrap justify-center gap-0 lg:gap-8 mb-15'>
       {timeUnits.map((unit) => (
         <div
           key={unit.label}
-          className='flex flex-col items-center min-w-[80px]'
+          className='flex flex-col items-center min-w-[60px] md:min-w-[80px]'
         >
           <span className='text-2xl leading-none tabular-nums'>
             {formatNumber(unit.value)}
