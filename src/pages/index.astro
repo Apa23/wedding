@@ -4,11 +4,11 @@ import EventDetails from '../components/EventDetails.astro'
 import SplitArticle from '../components/SplitArticle.astro'
 import LargeArticle from '../components/LargeArticle.astro'
 import Button from '../components/ui/Button'
-import Carrousel from '../components/Carrousel'
 import Countdown from '../components/Countdown'
 import Banner from '../components/Banner.astro'
 import StyledDate from '../components/StyledDate.astro'
 import ColorDots from '../components/ColorDots.astro'
+import Photo from '../components/ui/Photo.astro'
 ---
 
 <MainLayout>
@@ -16,12 +16,20 @@ import ColorDots from '../components/ColorDots.astro'
   <SplitArticle id='our-story'>
     <div class='flex flex-col gap-8 w-full lg:w-1/2' slot='left'>
       <h2 class='text-4xl lg:text-5xl'>Nuestra Historia</h2>
-      <img
-        src='/assets/about-us-image.png'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='h-full rounded-sm shadow-sm lg:hidden'
-        style='object-fit: cover;'
-      />
+      <div
+        class='lg:hidden justify-center items-center h-[350px] flex lg:w-1/2 gap-2'
+        slot='right'
+      >
+        <Photo
+          src='/assets/christmas-2.png'
+          alt='Nuestra Historia - Andrés y Valentina'
+        />
+        <Photo
+          src='/assets/christmas-3.png'
+          alt='Nuestra Historia - Andrés y Valentina'
+        />
+      </div>
+
       <p class='text-justify leading-6'>
         Hace siete años, nuestros corazones se encontraron y, sin saberlo,
         comenzó la más hermosa de las aventuras. Desde entonces, hemos
@@ -35,12 +43,17 @@ import ColorDots from '../components/ColorDots.astro'
       </p>
       <Button client:only label='Conoce más' route='/our-story' />
     </div>
-    <div class='hidden justify-center items-center lg:flex lg:w-1/2' slot='right'>
-      <img
-        src='/assets/about-us-image.png'
+    <div
+      class='hidden justify-center items-center h-[350px] lg:flex lg:w-1/2 gap-2'
+      slot='right'
+    >
+      <Photo
+        src='/assets/christmas-2.png'
         alt='Nuestra Historia - Andrés y Valentina'
-        class='h-full rounded-sm shadow-sm'
-        style='object-fit: cover;'
+      />
+      <Photo
+        src='/assets/christmas-3.png'
+        alt='Nuestra Historia - Andrés y Valentina'
       />
     </div>
   </SplitArticle>
@@ -53,19 +66,19 @@ import ColorDots from '../components/ColorDots.astro'
         year='2026'
         time='5:00 pm'
       />
-      <h2 class=' text-2xl lg:text-3xl'>Nos vemos en el altar</h2>
+      <h2 class='text-2xl lg:text-3xl'>¡Nos vemos en el altar!</h2>
     </section>
     <Countdown client:only slot='content' targetDate='2026-06-27T17:00:00' />
   </LargeArticle>
   <EventDetails />
   <LargeArticle id='dress-code' theme='secondary'>
-    <section slot='title' class=" mt-15">
+    <section slot='title' class='mt-15'>
       <div class='flex flex-col items-center gap-2'>
         <h3 class='text-3xl lg:text-4xl'>Código de vestuario</h3>
         <h4 class='text-2xl'>Elegante</h4>
       </div>
     </section>
-    <section slot='content' class="mb-15">
+    <section slot='content' class='mb-15'>
       <div class='flex flex-col items-center gap-4'>
         <p class='text-center text-md'>Colores reservados</p>
         <div class='grid grid-cols-3 gap-2'>
@@ -84,19 +97,22 @@ import ColorDots from '../components/ColorDots.astro'
   </LargeArticle>
 
   <SplitArticle id='event-rules'>
-    <section class='w-1/2 hidden lg:flex justify-center items-center' slot='left'>
-      <img
+    <section
+      class='w-1/2 hidden lg:flex justify-center items-center'
+      slot='left'
+    >
+      <Photo
         src='/assets/event-rules-image.png'
         alt='Event Rules Image'
         class='w-full h-full rounded-sm shadow-sm'
       />
     </section>
     <section class='w-full lg:w-1/2 flex flex-col gap-8' slot='right'>
-      <h2 class='text-5xl'>Detalles importantes</h2>
-        <img
+      <h2 class='text-5xl'>Antes del sí, recuerda</h2>
+      <Photo
         src='/assets/event-rules-image.png'
         alt='Event Rules Image'
-        class='w-full h-full rounded-sm shadow-sm block lg:hidden'
+        class='block lg:hidden'
       />
       <ul class='list-disc list-inside lg:text-justify leading-7 lg:leading-10'>
         <li>Respetar el código de vestuario, colores reservados.</li>
@@ -114,10 +130,10 @@ import ColorDots from '../components/ColorDots.astro'
   <SplitArticle id='contact-us' theme='secondary'>
     <section class='w-full lg:w-1/2' slot='left'>
       <div class='flex flex-col gap-4 lg:mt-16'>
-        <h2 class='text-5xl'>Contáctanos</h2>
+        <h2 class='text-5xl'>Escríbenos</h2>
         <p class='leading-6'>
           Queremos que disfrutes este día especial tanto como nosotros.<br /> Si necesitas
-          más detalles o tienes alguna inquietud, Escribenos.
+          más detalles o tienes alguna inquietud, no dudes en contactarnos.
         </p>
         <div class='flex gap-4'>
           <Button
@@ -133,12 +149,17 @@ import ColorDots from '../components/ColorDots.astro'
         </div>
       </div>
     </section>
-    <section class='w-full lg:w-1/2 hidden lg:block' slot='right'>
-      <img
-        src='/assets/about-us-image.png'
+    <section
+      class='w-full h-[350px] lg:w-1/2 hidden lg:flex gap-2'
+      slot='right'
+    >
+      <Photo
+        src='/assets/lake-3.jpeg'
         alt='Nuestra Historia - Andrés y Valentina'
-        class='h-full rounded-sm shadow-sm'
-        style='object-fit: cover;'
+      />
+      <Photo
+        src='/assets/lake-1.jpeg'
+        alt='Nuestra Historia - Andrés y Valentina'
       />
     </section>
   </SplitArticle>
@@ -148,5 +169,15 @@ import ColorDots from '../components/ColorDots.astro'
   #gifts {
     background-color: var(--color-primary);
     color: var(--color-accent);
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul li:before {
+    content: '✓';
+    margin-right: 8px;
+    font-weight: bold;
   }
 </style>
