@@ -1,0 +1,19 @@
+---
+import Photo from './ui/Photo.astro';
+
+interface Props {
+  images: string[];
+}
+
+const { images } = Astro.props as Props;
+---
+
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+  {images.map((src, index) => (
+    <Photo
+      src={src}
+      alt={`Photo gallery ${index + 1}`}
+      class='h-110 lg:h-80 '
+    />
+  ))}
+</section>
