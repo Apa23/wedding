@@ -21,13 +21,14 @@ import Photo from '../components/ui/Photo.astro'
         slot='right'
       >
         <Photo
-          src='/assets/christmas-2.png'
+          src='/assets/home/christmas-2.png'
           alt='Nuestra Historia - Andrés y Valentina'
-          class='hidden md:block'
+          class='h-full hidden md:block'
         />
         <Photo
-          src='/assets/christmas-3.png'
+          src='/assets/home/christmas-3.png'
           alt='Nuestra Historia - Andrés y Valentina'
+          class='h-full'
         />
       </div>
 
@@ -49,13 +50,14 @@ import Photo from '../components/ui/Photo.astro'
       slot='right'
     >
       <Photo
-        src='/assets/christmas-2.png'
+        src='/assets/home/christmas-2.png'
         alt='Nuestra Historia - Andrés y Valentina'
-        class='md:hidden xl:block'
+        class='md:hidden xl:block h-full'
       />
       <Photo
-        src='/assets/christmas-3.png'
+        src='/assets/home/christmas-3.png'
         alt='Nuestra Historia - Andrés y Valentina'
+        class='h-full'
       />
     </div>
   </SplitArticle>
@@ -104,7 +106,7 @@ import Photo from '../components/ui/Photo.astro'
       slot='left'
     >
       <Photo
-        src='/assets/event-rules-image.png'
+        src='/assets/home/event-rules-image.png'
         alt='Event Rules Image'
         class='w-full h-full rounded-sm shadow-sm'
       />
@@ -112,9 +114,9 @@ import Photo from '../components/ui/Photo.astro'
     <section class='w-full lg:w-1/2 flex flex-col gap-8' slot='right'>
       <h2 class='text-5xl'>Antes del sí, recuerda</h2>
       <Photo
-        src='/assets/event-rules-image.png'
+        src='/assets/home/event-rules-image.png'
         alt='Event Rules Image'
-        class='block lg:hidden'
+        class='block lg:hidden h-full'
       />
       <ul class='list-disc list-inside lg:text-justify leading-7 lg:leading-10'>
         <li>Respetar el código de vestuario, colores reservados.</li>
@@ -156,13 +158,14 @@ import Photo from '../components/ui/Photo.astro'
       slot='right'
     >
       <Photo
-        src='/assets/lake-3.jpeg'
+        src='/assets/home/lake-3.jpeg'
         alt='Nuestra Historia - Andrés y Valentina'
+        class='h-full'
       />
       <Photo
-        src='/assets/lake-1.jpeg'
+        src='/assets/home/lake-1.jpeg'
         alt='Nuestra Historia - Andrés y Valentina'
-        class='lg:hidden xl:block'
+        class='lg:hidden xl:block h-full'
       />
     </section>
   </SplitArticle>

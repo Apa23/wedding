@@ -1,41 +1,29 @@
 ---
 import LargeArticle from '../components/LargeArticle.astro'
-import SplitArticle from '../components/SplitArticle.astro'
+import PhotoGallery from '../components/PhotoGallery.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
 <BaseLayout pageTitle='Nuestra Historia'>
-  <SplitArticle id='the-begining' variant='fit'>
-    <section class='w-full lg:w-1/2' slot='right'>
-      <h2 class='text-3xl lg:text-4xl mb-4'>¿Amor a primera vista?</h2>
-      <img
-        src='/assets/christmas-3.png'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='w-full h-full rounded-sm shadow-sm block lg:hidden mb-4'
-      />
-      <p class='text-justify leading-6'>
-        Pues no, nos conocimos en la pastoral juvenil del Colegio La Salle.
-        Valen estudiaba en un colegio ubicado a pocos metros de Andrés y, en
-        cada encuentro de la pastoral, participabamos de actividades sin ser
-        conscientes el uno del otro. Fue allí donde nuestras historias se
-        cruzaron por primera vez. Aunque en ese momento Valen decía que nunca
-        pasaría algo entre nosotros, Dios ya estaba escribiendo una historia
-        distinta. Con el tiempo comenzamos a salir, a conocernos como amigos y
-        luego como novios, acompañandonos desde entonces en cada etapa de
-        crecimiento personal, profesional y espiritual.
-      </p>
-    </section>
-    <section slot='left' class='w-1/2 lg:block hidden'>
-      <img
-        src='/assets/christmas-3.png'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='w-full h-full rounded-sm shadow-sm'
-      />
-    </section>
-  </SplitArticle>
+  <LargeArticle id='first-sight' role='section'>
+    <h2 class='text-3xl lg:text-4xl' slot='title'>
+      ¿Amor a primera vista?
+    </h2>
+    <p class='text-justify leading-6 mt-4 mb-8' slot='content'>
+      Pues no, nos conocimos en la pastoral juvenil del Colegio La Salle. Valen
+      estudiaba en un colegio ubicado a pocos metros de Andrés y, en cada
+      encuentro de la pastoral, participabamos de actividades sin ser
+      conscientes el uno del otro. Fue allí donde nuestras historias se cruzaron
+      por primera vez. Aunque en ese momento Valen decía que nunca pasaría algo
+      entre nosotros, Dios ya estaba escribiendo una historia distinta. Con el
+      tiempo comenzamos a salir, a conocernos como amigos y luego como novios,
+      acompañandonos desde entonces en cada etapa de crecimiento personal,
+      profesional y espiritual.
+    </p>
+  </LargeArticle>
   <LargeArticle id='walking-with-god' role='section'>
-    <h2 class='text-3xl lg:text-4xl mb-4' slot='title'>Caminando con Dios</h2>
-    <p class='text-justify leading-6 mt-2' slot='content'>
+    <h2 class='text-3xl lg:text-4xl' slot='title'>Caminando con Dios</h2>
+    <p class='text-justify leading-6 mt-4 mb-8' slot='content'>
       Al inicio, nuestro camino de fe no fue fácil, experimentamos varios
       momentos de oposición, especialmente cuando empezamos a asistir juntos a
       la iglesia cristiana. Sin embargo, con el paso del tiempo, Dios fue
@@ -48,48 +36,32 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       nuestras vidas.
     </p>
   </LargeArticle>
-  <SplitArticle id='way-to-yes' variant='fit'>
-    <section class='w-full lg:w-1/2 my-auto' slot='left'>
-      <h2 class='text-3xl lg:text-4xl mb-4'>De camino al si</h2>
-      <img
-        src='/assets/anillo_2.jpeg'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='w-full h-full rounded-sm shadow-sm block lg:hidden mb-4'
-      />
-      <p class='text-justify'>
-        A lo largo de los años contamos con el apoyo de personas especiales que
-        Dios puso en nuestro camino y que fueron clave en nuestra formación como
-        pareja. A través de ellas, el Señor nos enseñó, nos corrigió y nos
-        sostuvo. Mirar atrás nos llena de gratitud al ver cómo Dios orquestó
-        cada detalle para llevarnos hasta aquí. Hoy vemos como esos sueños de
-        dos adolecentes se vuelven realidad mientras caminamos con paso firme
-        hacia el día más importante de nuestras vidas, deseando compartir con
-        ustedes el amor que Dios nos ha regalado.
-      </p>
-    </section>
-    <section slot='right' class='h-[300px] w-1/2 lg:flex hidden'>
-      <img
-        src='/assets/anillo_3.jpeg'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='w-full h-full rounded-sm shadow-sm object-contain'
-      />
-      <img
-        src='/assets/anillo_3.jpeg'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='w-full h-full rounded-sm shadow-sm object-contain'
-      />
-    </section>
-  </SplitArticle>
-  <section class='h-[300px] w-1/2 lg:flex hidden'>
-    <img
-      src='/assets/anillo_3.jpeg'
-      alt='Nuestra Historia - Andrés y Valentina'
-      class='w-full h-full rounded-sm shadow-sm object-contain'
+  <LargeArticle id='way-to-yes' role='section'>
+    <h2 class='text-3xl lg:text-4xl' slot='title'>De camino al sí</h2>
+    <p class='text-justify leading-6 mt-4 mb-8' slot='content'>
+      A lo largo de los años contamos con el apoyo de personas especiales que
+      Dios puso en nuestro camino y que fueron clave en nuestra formación como
+      pareja. A través de ellas, el Señor nos enseñó, nos corrigió y nos
+      sostuvo. Mirar atrás nos llena de gratitud al ver cómo Dios orquestó cada
+      detalle para llevarnos hasta aquí. Hoy vemos como esos sueños de dos
+      adolecentes se vuelven realidad mientras caminamos con paso firme hacia el
+      día más importante de nuestras vidas, deseando compartir con ustedes el
+      amor que Dios nos ha regalado.
+    </p>
+  </LargeArticle>
+  <LargeArticle id='gallery' role='section' >
+    <PhotoGallery
+      slot='content'
+      images={[
+        '/assets/our-story/funny.jpg',
+        '/assets/our-story/birthday.jpg',
+        '/assets/our-story/love.png',
+        '/assets/our-story/trip-1.jpeg',
+        '/assets/our-story/trip-2.jpeg',
+        '/assets/our-story/trip-3.jpeg',
+        '/assets/our-story/ring-1.jpeg',
+        '/assets/our-story/ring-3.jpeg',
+      ]}
     />
-    <img
-      src='/assets/anillo_3.jpeg'
-      alt='Nuestra Historia - Andrés y Valentina'
-      class='w-full h-full rounded-sm shadow-sm object-contain'
-    />
-  </section>
+  </LargeArticle>
 </BaseLayout>
