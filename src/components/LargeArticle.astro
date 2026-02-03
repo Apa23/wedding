@@ -10,7 +10,7 @@ const { id, theme, role = 'article' } = Astro.props
 
 <article
   id={id}
-  class={`w-full flex flex-col px-10 lg:px-35 ${theme === 'secondary' ? 'secondary' : 'primary'} ${role === 'article' ? 'gap-4 items-center justify-center mx-auto ' : ''}`}
+  class={`w-full flex flex-col px-10 lg:px-25 xl:px-35 ${theme === 'secondary' ? 'secondary' : 'primary'} ${role === 'article' ? 'gap-4 items-center justify-center mx-auto ' : ''}`}
 >
   <slot name='title' />
   <slot name='content' />
