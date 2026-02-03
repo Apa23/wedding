@@ -50,7 +50,7 @@ const NavMenu = () => {
       </section>
       <section className={`menu ${isOpen ? 'menu-open' : 'menu-closed'}`}>
         <nav
-          className={`flex flex-row items-center justify-between gap-4 text-white`}
+          className={`flex flex-row items-center justify-between gap-4 text-white text-xl lg:text-sm`}
         >
           <a href='#our-story' onClick={handleMenuClick}>
             Nuestra Historia
