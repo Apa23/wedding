@@ -8,13 +8,12 @@ type ButtonProps = {
   className?: string
   route?: string
   icon?: React.ReactNode
-  target?: HTMLAnchorElement['target']
   onClick?: () => void
 }
 
 const Button = ({ variant = 'primary', ...props }: ButtonProps) => {
   return (
-    <a href={props.route} target={props.target} id={props.id}>
+    <a href={props.route} target="_blank" id={props.id}>
       <button
         className={`${
           props.className

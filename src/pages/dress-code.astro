@@ -1,19 +1,14 @@
 ---
-import Carrousel from '../components/Carrousel'
-import LargeArticle from '../components/LargeArticle.astro'
 import SplitArticle from '../components/SplitArticle.astro'
+import Button from '../components/ui/Button'
+import Photo from '../components/ui/Photo.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
 <BaseLayout pageTitle='Código de Vestuario'>
   <SplitArticle id='dress-code-men' variant='fit'>
-    <section class='w-full lg:max-w-1/2' slot='left'>
-      <h2 class='text-3xl lg:text-4xl mb-4'>Para ellos</h2>
-      <img
-        src='/assets/about-us-image.png'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='w-full h-full rounded-sm shadow-sm block lg:hidden mb-4'
-      />
+    <section class='w-full lg:max-w-1/2 flex flex-col justify-center' slot='left'>
+      <h2 class='text-3xl lg:text-4xl mb-4'>Hombres</h2>
       <h3 class='text-xl lg:text-2xl mb-2'>Recomendamos</h3>
       <p class='text-justify mb-4'>
         El código de vestuario para caballeros es elegante–formal. Son
@@ -28,22 +23,18 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         desgastados, bermudas, chanclas ni ropa casual en general.
       </p>
     </section>
-    <section slot='right' class='lg:block hidden'>
+    <section slot='right' class='flex flex-col items-center justify-center'>
       <img
-        src='/assets/about-us-image.png'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='w-full h-full rounded-sm shadow-sm'
+        src='/assets/event-details/men-dresscode.png'
+        alt='Código de vestuario hombres'
+        class='lg:h-full object-cover'
       />
+      <Button  label='Más ideas aquí' route='https://pin.it/3iX3TWIUW' className='mt-8' />
     </section>
   </SplitArticle>
   <SplitArticle id='dress-code-women' variant='fit'>
-    <section class='w-full lg:max-w-1/2' slot='right'>
-      <h2 class='text-3xl lg:text-4xl mb-4'>Para ellas</h2>
-      <img
-        src='/assets/about-us-image.png'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='w-full h-full rounded-sm shadow-sm block lg:hidden mb-4'
-      />
+    <section class='w-full lg:max-w-1/2 flex flex-col justify-center' slot='right'>
+      <h2 class='text-3xl lg:text-4xl mb-4'>Mujeres</h2>
       <h3 class='text-xl lg:text-2xl mb-2'>Recomendamos</h3>
       <p class='text-justify mb-4'>
         El código de vestuario para damas debe mantener un equilibrio entre
@@ -58,12 +49,21 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         llamativas.
       </p>
     </section>
-    <section slot='left' class='lg:block hidden'>
+     <section slot='right' class='flex lg:hidden flex-col items-center justify-center'>
       <img
-        src='/assets/about-us-image.png'
-        alt='Nuestra Historia - Andrés y Valentina'
-        class='w-full h-full rounded-sm shadow-sm'
+        src='/assets/event-details/women-dresscode.png'
+        alt='Código de vestuario mujeres'
+        class='h-full object-cover'
       />
+      <Button label='Más ideas aquí' route='https://pin.it/4ztf5vhF5' className='mt-8' />
+    </section>
+    <section slot='left' class='hidden lg:flex flex-col items-center justify-center'>
+      <img
+        src='/assets/event-details/women-dresscode.png'
+        alt='Código de vestuario mujeres'
+        class='h-full object-cover'
+      />
+      <Button label='Más ideas aquí' route='https://pin.it/4ztf5vhF5' className='mt-8' />
     </section>
   </SplitArticle>
 </BaseLayout>
