@@ -2,6 +2,10 @@
 import LargeArticle from '../components/LargeArticle.astro'
 import PhotoGallery from '../components/PhotoGallery.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
+
+// Cargar dinámicamente todas las imágenes de la carpeta our-story
+const imageFiles = import.meta.glob('/public/assets/our-story/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+const images = Object.keys(imageFiles).map((path) => path.replace('/public', ''))
 ---
 
 <BaseLayout pageTitle='Nuestra Historia'>
@@ -52,16 +56,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   <LargeArticle id='gallery' role='section' >
     <PhotoGallery
       slot='content'
-      images={[
-        '/assets/our-story/funny.jpg',
-        '/assets/our-story/birthday.jpg',
-        '/assets/our-story/love.png',
-        '/assets/our-story/trip-1.jpeg',
-        '/assets/our-story/trip-2.jpeg',
-        '/assets/our-story/trip-3.jpeg',
-        '/assets/our-story/ring-1.jpeg',
-        '/assets/our-story/ring-3.jpeg',
-      ]}
+      images={images}
     />
   </LargeArticle>
 </BaseLayout>
